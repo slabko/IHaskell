@@ -1,7 +1,7 @@
 FROM ubuntu:14.04
 
 # Install all necessary Ubuntu packages
-RUN apt-get update && apt-get install -y python-dev python-setuptools libmagic-dev libtinfo-dev libzmq3-dev libcairo2-dev libpango1.0-dev libblas-dev liblapack-dev gcc g++
+RUN apt-get update && apt-get install -y python-dev python-setuptools libmagic-dev libtinfo-dev libzmq3-dev libcairo2-dev libpango1.0-dev libblas-dev liblapack-dev gcc g++ libncurses5-dev
 
 # Install Jupyter notebook
 RUN easy_install -U pip && pip install -U jupyter
@@ -34,6 +34,8 @@ COPY html /ihaskell/html
 COPY main /ihaskell/main
 COPY LICENSE /ihaskell/LICENSE
 RUN stack build && stack install
+
+RUN rm -rf /var/lib/apt/lists/*
 
 # Run the notebook
 RUN mkdir /notebooks
