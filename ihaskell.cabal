@@ -95,6 +95,7 @@ library
                       , lens-aeson
                       , regex-pcre-builtin
                       , string-conv
+                      , HandsomeSoup
   if flag(binPkgDb)
     build-depends:       bin-package-db
 
