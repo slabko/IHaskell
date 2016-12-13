@@ -96,6 +96,7 @@ library
                       , regex-pcre-builtin
                       , string-conv
                       , HandsomeSoup
+                      , iso8601-time
   if flag(binPkgDb)
     build-depends:       bin-package-db
 
