@@ -97,6 +97,7 @@ library
                       , string-conv
                       , HandsomeSoup
                       , iso8601-time
+                      , cassava
   if flag(binPkgDb)
     build-depends:       bin-package-db
 
