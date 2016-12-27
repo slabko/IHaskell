@@ -41,5 +41,6 @@ RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir /notebooks
 ENV PATH /ihaskell/.stack-work/install/x86_64-linux/nightly-2015-08-15/7.10.2/bin:/root/.stack/snapshots/x86_64-linux/nightly-2015-08-15/7.10.2/bin:/root/.stack/programs/x86_64-linux/ghc-7.10.2/bin:/root/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 RUN ihaskell install
+RUN pip install numpy && pip install scipy
 ENTRYPOINT stack exec -- jupyter notebook --NotebookApp.port=8888 '--NotebookApp.ip=*' --NotebookApp.notebook_dir=/notebooks
 EXPOSE 8888
